@@ -1,0 +1,18 @@
+#!/bin/sh
+#########################
+## PASSWORD GEN SCRIPT ##
+##    -drewzh.com-     ##
+#########################
+
+echo "Please enter your master password:"
+stty -echo
+read -r master
+stty echo
+
+echo "Please enter a key (e.g: domain password will be used for):"
+read -r key
+
+password=$(echo $master$key | sha1sum | cut -b 1-40 | base64)
+
+echo "Your password is:"
+echo $password
