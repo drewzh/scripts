@@ -1,7 +1,7 @@
 #!/bin/sh
 # Reset permissions on home directory
-# User  = Read,Write,Execute
-# Group = Read,Write,Execute
-# Group = Read
+# User   = Read,Write,Execute
+# Group  = Read,Write,Execute
+# Others = Read
 
 chown -R $USER:$USER ~/{*,.[^.]*} && chmod -R u=rwX,g=rwX,o=rX ~/{*,.[^.]*}
